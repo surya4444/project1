@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [29/May/2020:00:55:29 +0530] "GET / HTTP/1.1" 200 1453 http-bio-8080-exec-1 1727
+0:0:0:0:0:0:0:1 - - [29/May/2020:00:56:07 +0530] "GET /?emailId=asdasdadasasda&password=asdasdasd&actionType=Sign+In HTTP/1.1" 200 1453 http-bio-8080-exec-4 6
