@@ -11,6 +11,16 @@
 	* (Hint: Make use of the email id stored in the session object)
 	*/
 
+	try{
+	    if(session.getAttribute("emailId").equals(request.getParameter("emailId"))) {
+            response.sendRedirect("/Home.jsp");
+        }
+    }
+	catch (Exception ex)
+    {
+
+    }
+
 %>
 <!--
 	TODO: 4.3. Right now we have the structure of the form ready, however it's Sign In and
@@ -25,7 +35,7 @@
 </head>
 <body>
 <div class="form_wrapper">
-    <form id="login_form">
+    <form id="login_form" method="post" action="blog/post">
         <div id="email_div">
             <label for="emailId">User Email</label>
             <input type="text" placeholder="example@email.com" required="required" name="emailId" id="emailId"/>
@@ -44,7 +54,15 @@
 				set inside the UserServlet.
 			-->
             <%
-
+                try
+                {
+                    if ((Boolean) request.getAttribute("isError"))
+                    {
+                        out.print(request.getAttribute("errorMessage"));
+                    }
+                }
+                catch (NullPointerException e) {
+                }
             %>
         </div>
     </form>

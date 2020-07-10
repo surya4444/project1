@@ -15,6 +15,14 @@
 	* (Hint: Make use of the email id stored in the session object to check if user is logged in or not.)
     */
 
+    try{
+        if (!session.getAttribute("emailId").equals(request.getParameter("emailId"))){
+            response.sendRedirect("/index.jsp");
+        }
+    }catch(NullPointerException e){
+
+    }
+
 %>
 <html>
 <head>

@@ -11,5 +11,6 @@ com\upgrad\blog\exceptions\PostNotFoundException.class
 com\upgrad\blog\util\EmailValidator.class
 com\upgrad\blog\servlets\UserServlet.class
 com\upgrad\blog\dto\UserDTO.class
+com\upgrad\blog\dao\DAOFactory$1.class
 com\upgrad\blog\dao\DAOFactory.class
 com\upgrad\blog\dao\UserDAO.class

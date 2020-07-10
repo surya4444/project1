@@ -12,6 +12,13 @@
 	* (Hint: Make use of the email id stored in the session object to check if user is logged in or not.)
     */
 
+    try{
+        if (!session.getAttribute("emailId").equals(request.getParameter("emailId"))){
+            response.sendRedirect("/index.jsp");
+        }
+    }catch(NullPointerException e){
+    }
+
 %>
 <!--
 	TODO: 4.16. Right now we have the structure of the form ready, however it's Post button is

@@ -24,6 +24,18 @@ package com.upgrad.blog.dao;
  * the post was deleted successfully, then return true, otherwise return false.
  */
 
+import com.upgrad.blog.db.DatabaseConnection;
+import com.upgrad.blog.dto.PostDTO;
+import com.upgrad.blog.dto.UserDTO;
+import com.upgrad.blog.interfaces.PostsCRUD;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.HashSet;
+import java.util.List;
+
 /**
  * TODO: 7.10. Implement findAllTags() method which returns a set of all unique tags
  * in the POSTS table.
@@ -31,6 +43,39 @@ package com.upgrad.blog.dao;
  * returns all the posts corresponding to the input "tag" from the POSTS table defined
  * in the database.
  */
-public class PostDAO {
+public class PostDAO implements PostsCRUD {
 
+    @Override
+    public List<PostDTO> findByEmail(String emailId) throws SQLException {
+
+        return null;
+    }
+
+    @Override
+    public UserDTO create(UserDTO postDTO) throws SQLException {
+
+        return null;
+    }
+
+    @Override
+    public boolean deleteById(int id, String emailId) throws SQLException {
+
+        return false;
+    }
+
+    @Override
+    public List<PostDTO> findByTag(String tag) throws SQLException {
+
+        return null;
+    }
+
+    @Override
+    public HashSet<String> findAllTags() throws SQLException {
+
+        return null;
+    }
+
+    private List<PostDTO> getDataFromResultSet(ResultSet resultSet) {
+        return null;
+    }
 }

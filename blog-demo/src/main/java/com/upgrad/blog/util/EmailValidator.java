@@ -1,6 +1,11 @@
 //***************************DONE********************
 package com.upgrad.blog.util;
 
+import com.upgrad.blog.exceptions.EmailNotValidException;
+
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * TODO: 5.1. Create a method with the following signature.
  * public boolean isValidEmail(String email)
@@ -11,7 +16,18 @@ package com.upgrad.blog.util;
  * TODO 5.3: This method should return (boolean) true if the email id is in the given format. Otherwise,
  * it should throw EmailNotValidException with the "Please provide valid email address" message.
  */
-public class EmailValidator {
+public class EmailValidator
+{
+    public boolean isValidEmail(String email) throws EmailNotValidException {
+        String ePattern = "^[a-zA-Z0-9]+@([a-zA-Z]+\\.)+[a-zA-Z]{2,6}$";
+        if (email.matches(ePattern)){
+            return true;
+        }else{
+            throw new EmailNotValidException("Please provide valid email address");
+        }
+
+
+    }
 
 
     
@@ -22,7 +38,7 @@ public class EmailValidator {
 //				"a@b.com"
 //			);
 //		List<String> failingEmails = Arrays.asList(
-//				
+//
 //				"@.",
 //				"%@xyz.com",
 //				"a@b.c",
@@ -40,7 +56,7 @@ public class EmailValidator {
 //				System.out.println("FAILED");
 //			}
 //		}
-//		
+//
 //		System.out.println("All fails");
 //		for (String email: failingEmails) {
 //			System.out.print("checking " + email + " : ");
